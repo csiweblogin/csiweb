@@ -69,8 +69,13 @@ WSGI_APPLICATION = 'csiweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'ginger.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'csiweblogin',
+		'USER' : 'adminDyvVAvs',
+		'PASSWORD' : 'xCv7ngBel2pW',
+		'HOST' : '127.11.193.130',
+		'PORT' : '3306',
+		
     }
 }
 
