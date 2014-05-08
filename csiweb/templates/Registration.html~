@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!--Meta-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CSI NITK has been a forum for students to create projects, discuss upcoming ideas and technologies, develop organisational and leadership skills, and find like-minded students to work with.">
+<meta name="author" content="CSI">
+
+<!-- Styles -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link rel='stylesheet' id='prettyphoto-css'  href="/static/css/prettyPhoto.css" type='text/css' media='all'>
+    
+	<link href="/static/css/fontello.css" type="text/css" rel="stylesheet">
+	
+	<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="/static/css/style_login.css" >
+    <link rel="stylesheet" href="/static/css/scroll.css" >
+	
+	 <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<!--script-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script src="/static/js/login.js"></script>
+	
+	<!-- Favicon -->
+    <link rel="shortcut icon" href="/static/favicon.ico">
+ <!-- JQuery -->
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <!-- Load ScrollTo -->
+    <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <!-- Load LocalScroll -->
+    <script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+    <!-- prettyPhoto Initialization -->
+	
+	<title> CSI NITK - Registration
+</title>
+
+
+</head>
+
+<body>
+<!--******************** NAVBAR ********************-->
+    <div class="navbar-wrapper">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+		  
+             <h1 class="brand"><span class="logo"><img src="/static/img/CSI-logo.png" height="45px" width="55px" alt="CSI NITK Chapter"></span><a href="/#top"> CSI NITK</a></h1>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <nav class="pull-right nav-collapse collapse">
+              <ul id="menu-main" class="nav">
+                <li><a title="Yantras" href="
+                  /#portfolio">Yantras</a></li>
+                <li><a title="Projects" href="
+                  /#services">Project and Activities</a></li>
+                <li><a title="Events" href="/#news">Fest and Events</a></li>
+                <li><a title="Street View" href="/#testimonials">Street View</a></li>
+		<li><a title="FUN!" href="/#fun">Fun @CSI</a></li>
+		<li><a title="Team" href="/#team">Team</a></li>
+				<li>   <div class="login">
+		  
+             <!-- Login Starts Here -->
+              <div id="loginContainer">
+                <a href="#" id="loginButton"><span>Login</span><em></em></a>
+                <div style="clear:both"></div>
+                <div id="loginBox">                
+                    <form action ="/login/" id="loginForm" method="post">
+                        <fieldset id="body">
+                            <fieldset>{% csrf_token %}
+                                <label for="email">Username</label>
+                                <input type="login" name="email" id="email" />
+                            </fieldset>
+                            <fieldset>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" />
+                            </fieldset>
+                            <input type="submit" id="login" value="Sign in" />
+                            <span><a href="#">Forgot your password?</a></span>
+							
+							<span class="blue"><a title="Registration" href="#contact">Registration</a></span>
+                        </fieldset>
+                                            </form>
+                </div>
+             </div>
+              <!-- Login Ends Here -->
+			</div></li>
+              </ul>
+            </nav>
+			
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.navbar-inner -->
+      </div>
+      <!-- /.navbar -->
+    </div>
+    <!-- navbar-wrapper -->
+	
+	
+	
+			  <!--******************** Registration Section ********************-->
+    <section id="contact" class="single-page scrollblock">
+      <div class="container">
+        <div class="align"><i class="icon-email"></i></div>
+        <h1>Register now!</h1>
+        <font color = "red" size = "3">{{ error }}</font>
+        <div class="row">
+          <div class="span12">
+            <div class="cform" id="theme-form">
+              <form action="/submit/" method="post" class="cform-form">{% csrf_token %}
+                <div class="row">
+                  <div class="span6"> <span class="your-name">
+                    <input type="text" name="name" placeholder="Your Name" class="cform-text" size="40" title="name">
+                    </span> </div>
+                  <div class="span6"> <span class="your-email">
+                    <input type="text" name="email_id" placeholder="Your Email" class="cform-text" size="40" title="email_id">
+                    </span> </div>
+                </div>
+                <div class="row">
+                  <div class="span6"> <span class="password">
+                    <input type="password" name="password" rows="2" cols="20" placeholder="Password" class="cform-text" size="40" title="password">
+                    </span> </div>
+                  <div class="span6"> <span class="re_p">
+                    <input type="password" name="re_password" placeholder="Re-enter Password" class="cform-text" size="40" title="re_password">
+                    </span> </div>
+                </div>
+                <div class="row">
+                  <div class="span4"> <span class="mob_num">
+                    <input type="text" name="mob_num" placeholder="Mobile Number" class="cform-text" size="40" title="mob_num">
+                    </span> </div>
+                  <div class="span4"> <span class="gender">
+                    <input type="text" name="gender" placeholder="Gender" class="cform-text" size="40" title="gender">
+                    </span> </div>
+                  <div class="span4"> <span class="dob">
+                    <input type="text" name="dob" placeholder="Date Of Birth" class="cform-text" size="40" title="dob">
+                    </span> </div>
+                </div>
+                <div class="row">
+                  <div class="span4"> <span class="year">
+                    <input type="text" name="year" placeholder="year" class="cform-text" size="40" title="year">
+                    </span> </div>
+                  <div class="span4"> <span class="roll">
+                    <input type="text" name="roll" placeholder="Roll No." class="cform-text" size="40" title="roll">
+                    </span> </div>
+                  <div class="span4"> <span class="branch">
+                    <input type="text" name="branch" placeholder="Branch" class="cform-text" size="40" title="branch">
+                    </span> </div>
+                </div>
+
+                <div>
+                  <input type="submit" value="Submit" class="cform-submit pull-left">
+                </div>
+                <div class="cform-response-output"></div>
+              </form>
+            </div>
+          </div>
+          <!-- ./span12 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+	
+	
+	
+	
+	
+<div class="footer-wrapper">
+      <div class="container">
+        <footer>
+          <small>&copy; 2014 CSI NITK Chapter.</small>
+        </footer>
+      </div>
+      <!-- ./container -->
+    </div>
+	
+	<!-- Loading the javaScript at the end of the page -->
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="/static/js/site.js"></script>
+</body>
+</html>

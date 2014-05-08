@@ -1,0 +1,6 @@
+<html>
+<body>
+<!--{% csrf_token %} -->
+hello {{ name }}
+</body>
+<html>
